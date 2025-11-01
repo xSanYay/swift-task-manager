@@ -59,7 +59,7 @@ export default function TaskItem({
   const handleMouseEnter = (buttonName: string) => {
     const timer = setTimeout(() => {
       setHoveredButton(buttonName);
-    }, 3000);
+    }, 1000); // Changed from 3000 to 1000 milliseconds (1 second)
     setHoverTimer(timer);
   };
 
@@ -119,7 +119,7 @@ export default function TaskItem({
               {/* Completion timestamp */}
               {task.completedAt && (
                 <div className="text-sm text-green-600 mt-1 font-medium">
-                  ✓ Completed: {task.completedAt}
+                  Completed: {task.completedAt}
                 </div>
               )}
             </div>
@@ -128,7 +128,7 @@ export default function TaskItem({
 
         {/* Action buttons - Modern icon bar */}
         {!isEditing && (
-          <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+          <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 -ml-2">
             {/* Edit button */}
             <div className="relative">
               <button
@@ -138,7 +138,7 @@ export default function TaskItem({
                 className="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
                 aria-label="Edit task"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                 </svg>
               </button>
@@ -158,7 +158,7 @@ export default function TaskItem({
                 className="p-2 text-gray-500 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition-colors"
                 aria-label="Set deadline"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
               </button>
@@ -178,7 +178,7 @@ export default function TaskItem({
                 className="p-2 text-gray-500 hover:text-green-600 hover:bg-green-50 rounded-lg transition-colors"
                 aria-label="Add subtask"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>
               </button>
@@ -198,7 +198,7 @@ export default function TaskItem({
                 className="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
                 aria-label="Delete task"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                 </svg>
               </button>
